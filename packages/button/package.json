@@ -1,0 +1,10 @@
+{
+  "name": "@yunshu-ui/button",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "",
+  "license": "MIT"
+}

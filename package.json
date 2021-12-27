@@ -1,0 +1,19 @@
+{
+  "name": "ysui",
+  "version": "0.1.0",
+  "description": "Front-end UI component library",
+  "main": "index.js",
+  "scripts": {
+    "create:pkg": "node scripts/create-pkg.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mxsyx/yunshu-ui.git"
+  },
+  "author": "Mxsyx (mxsyxin@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mxsyx/yunshu-ui/issues"
+  },
+  "homepage": "https://github.com/mxsyx/yunshu-ui#readme"
+}
