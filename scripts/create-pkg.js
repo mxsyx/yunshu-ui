@@ -18,20 +18,20 @@ function camelize(str) {
 function createPkg() {
   r.question('please input package name: ', pkgName => {
     const pkgDir = path.resolve(__dirname, '../packages', pkgName)
+    const pkgSrcDir = `${pkgDir}/src`
+    const componentName = camelize(pkgName)
 
     if (fs.existsSync(pkgDir)) {
-      console.error(`package ${pkgName} already exists.`);
-      return
+      throw new Error(`package ${pkgName} already exists.`)
     }
 
     fs.mkdirSync(pkgDir)
     fs.writeFileSync(`${pkgDir}/index.ts`, `export * from "./src"`)
-    fs.writeFileSync(`${pkgDir}/README.md`, `# ${pkgName}`)
+    fs.writeFileSync(`${pkgDir}/README.md`, `# ${componentName}`)
 
-    const pkgSrcDir = `${pkgDir}/src`
     fs.mkdirSync(pkgSrcDir)
-    fs.writeFileSync(`${pkgSrcDir}/${camelize(pkgName)}.ts`, '')
-    fs.writeFileSync(`${pkgSrcDir}/index.ts`, `export * from "./${pkgName}"`)
+    fs.writeFileSync(`${pkgSrcDir}/${componentName}.ts`, '')
+    fs.writeFileSync(`${pkgSrcDir}/index.ts`, `export * from "./${componentName}"`)
 
     r.close()
     process.exit(0)

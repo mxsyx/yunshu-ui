@@ -1,1 +1,1 @@
-// Button component
+export * from "./src"
